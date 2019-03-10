@@ -64,7 +64,8 @@ namespace SteveCadwallader.CodeMaid.UI.Dialogs.Options
                                         new CleaningVisualStudioViewModel(package, ActiveSettings),
                                         new CleaningInsertViewModel(package, ActiveSettings),
                                         new CleaningRemoveViewModel(package, ActiveSettings),
-                                        new CleaningUpdateViewModel(package, ActiveSettings)
+                                        new CleaningUpdateViewModel(package, ActiveSettings),
+                                        new CleaningVerticalAlignmentViewModel(package, ActiveSettings)
                                     }
                                 },
                             new CollapsingViewModel(package, ActiveSettings),

@@ -39,6 +39,7 @@ namespace SteveCadwallader.CodeMaid.Logic.Cleaning
         private readonly RemoveWhitespaceLogic _removeWhitespaceLogic;
         private readonly UpdateLogic _updateLogic;
         private readonly UsingStatementCleanupLogic _usingStatementCleanupLogic;
+        private readonly VerticalAlignmentLogic _verticalAlignmentLogic;
 
         private readonly CachedSettingSet<string> _otherCleaningCommands =
             new CachedSettingSet<string>(() => Settings.Default.ThirdParty_OtherCleaningCommandsExpression,
@@ -89,6 +90,7 @@ namespace SteveCadwallader.CodeMaid.Logic.Cleaning
             _removeWhitespaceLogic = RemoveWhitespaceLogic.GetInstance(_package);
             _updateLogic = UpdateLogic.GetInstance(_package);
             _usingStatementCleanupLogic = UsingStatementCleanupLogic.GetInstance(_package);
+            _verticalAlignmentLogic = VerticalAlignmentLogic.GetInstance(_package);
         }
 
         #endregion Constructors
@@ -335,6 +337,10 @@ namespace SteveCadwallader.CodeMaid.Logic.Cleaning
             _updateLogic.UpdateEventAccessorsToBothBeSingleLineOrMultiLine(events);
             _updateLogic.UpdatePropertyAccessorsToBothBeSingleLineOrMultiLine(properties);
             _updateLogic.UpdateSingleLineMethods(methods);
+
+            // Perform vertical alignment cleanup.
+            _verticalAlignmentLogic.VerticallyAlignAfterTypesAndModifiers(textDocument);
+            _verticalAlignmentLogic.VerticallyAlignAssignments(textDocument);
 
             // Perform comment cleaning.
             _commentFormatLogic.FormatComments(textDocument);

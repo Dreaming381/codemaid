@@ -92,6 +92,7 @@
                                 <ResourceDictionary Source="Cleaning/CleaningParentDataTemplate.xaml" />
                                 <ResourceDictionary Source="Cleaning/CleaningRemoveDataTemplate.xaml" />
                                 <ResourceDictionary Source="Cleaning/CleaningUpdateDataTemplate.xaml" />
+                                <ResourceDictionary Source="Cleaning/CleaningVerticalAlignmentDataTemplate.xaml" />
                                 <ResourceDictionary Source="Cleaning/CleaningVisualStudioDataTemplate.xaml" />
                                 <ResourceDictionary Source="Collapsing/CollapsingDataTemplate.xaml" />
                                 <ResourceDictionary Source="Digging/DiggingDataTemplate.xaml" />

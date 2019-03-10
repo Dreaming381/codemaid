@@ -2366,6 +2366,15 @@ namespace SteveCadwallader.CodeMaid.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vertically Align.
+        /// </summary>
+        public static string VerticallyAlign {
+            get {
+                return ResourceManager.GetString("VerticallyAlign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Visuals.
         /// </summary>
         public static string Visuals {
